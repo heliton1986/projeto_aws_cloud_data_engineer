@@ -1,0 +1,4 @@
+FROM python
+WORKDIR /hash
+COPY mascarar_dados.py .
+CMD [ "python", "./mascarar_dados.py" ]

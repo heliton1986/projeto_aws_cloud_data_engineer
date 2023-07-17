@@ -1,0 +1,52 @@
+exercise_2
+
+Harrison Ford 118.8
+Samuel L. Jackson 69.2
+Morgan Freeman 73.3
+Tom Hanks 98.7
+Robert Downey Jr. 74.5
+Eddie Murphy 100.3
+Tom Cruise 99.6
+Johnny Depp 74.9
+Michael Caine 57.8
+Scarlett Johansson 90.3
+Gary Oldman 86.7
+Robin Williams 66.9
+Bruce Willis 53.2
+Stellan Skarsgard 73.8
+Anthony Daniels 451.8
+Ian McKellen 101.6
+Will Smith 131.2
+Stanley Tucci 62.5
+Matt Damon 79.7
+Robert DeNiro 39.0
+Cameron Diaz 89.2
+Liam Neeson 46.7
+Andy Serkis 125.7
+Don Cheadle 84.9
+Ben Stiller 76.4
+Helena Bonham Carter 78.4
+Orlando Bloom 165.6
+Woody Harrelson 56.3
+Cate Blanchett 71.9
+Julia Roberts 65.1
+Elizabeth Banks 77.9
+Ralph Fiennes 75.4
+Emma Watson 157.8
+Tommy Lee Jones 58.3
+Brad Pitt 67.0
+Adam Sandler 83.2
+Daniel Radcliffe 155.0
+Jonah Hill 89.8
+Owen Wilson 66.7
+Idris Elba 99.3
+Bradley Cooper 102.3
+Mark Wahlberg 70.8
+Jim Carrey 94.3
+Dustin Hoffman 58.7
+Leonardo DiCaprio 100.7
+Jeremy Renner 119.1
+Philip Seymour Hoffman 61.6
+Sandra Bullock 70.4
+Chris Evans 106.9
+Anne Hathaway 96.7

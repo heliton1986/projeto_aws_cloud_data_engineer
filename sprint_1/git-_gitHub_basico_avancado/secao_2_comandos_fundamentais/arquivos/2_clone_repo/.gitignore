@@ -1,0 +1,4 @@
+d.txt
+
+# Todos arquivos do diretorio serão ignorados
+nodes_modules/* 

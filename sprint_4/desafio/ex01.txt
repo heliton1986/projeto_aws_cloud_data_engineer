@@ -1,0 +1,22 @@
+# Construa uma imagem a partir de um arquivo de instruções (Dockerfile) que execute o código carguru.py. Após, execute um container a partir da imagem criada.
+
+# Registre aqui o conteúdo de seu arquivo Dockerfile e o comando utilizado para execução do container.
+
+RESPOSTA:
+    Conteúdo de seu arquivo Dockerfile:
+
+        FROM python
+        WORKDIR /garagem
+        COPY carguru.py .
+        CMD [ "python", "./carguru.py" ]
+
+
+    Comando para criar imagem:
+
+        docker build -t carguru .
+
+
+    Comando utilizado para execução do container:
+
+        docker run -it --name ex01 carguru
+

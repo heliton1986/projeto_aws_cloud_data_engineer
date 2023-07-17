@@ -1,0 +1,67 @@
+CREATE TABLE clientes AS
+SELECT idCliente,nomeCliente,cidadeCliente,estadoCliente,paisCliente
+FROM tb_locacao;
+
+-- Criar tabela carros
+CREATE TABLE carros AS
+SELECT idCarro,kmCarro,classiCarro,marcaCarro,modeloCarro,anoCarro
+FROM tb_locacao;
+
+--Criar tabela combustiveis
+CREATE TABLE combustiveis AS
+SELECT idCombustivel,tipoCombustivel
+FROM tb_locacao;
+
+-- Criar tabela locacao
+CREATE TABLE locacao (
+    idLocacao INTEGER PRIMARY KEY,
+    idCliente INTEGER,
+    idCarro INTEGER,
+    idCombustivel INTEGER,
+    dataLocacao DATE,
+    horaLocacao TIME,
+    qtdDiaria INTEGER,
+    vlrDiaria FLOAT,
+    dataEntrega DATE,
+    horaEntrega TIME,
+    idVendedor INTEGER,
+    FOREIGN KEY (idCliente) REFERENCES Cliente(idCliente),
+    FOREIGN KEY (idCarro) REFERENCES Carro(idCarro),
+    FOREIGN KEY (idCombustivel) REFERENCES Combustivel(idCombustivel),
+    FOREIGN KEY (idVendedor) REFERENCES Vendedor(idVendedor)
+);
+
+-- Inserir registros na tabela locacao
+INSERT INTO locacao (idLocacao, idCliente, idCarro, idCombustivel, dataLocacao, horaLocacao, qtdDiaria, vlrDiaria, dataEntrega, horaEntrega, idVendedor)
+SELECT idLocacao, idCliente, idCarro, idCombustivel, dataLocacao, horaLocacao, qtdDiaria, vlrDiaria, dataEntrega, horaEntrega, idVendedor
+FROM tb_locacao;
+
+--Criar tabela vendedores
+CREATE TABLE vendedores AS
+SELECT idVendedor,nomeVendedor,sexoVendedor,estadoVendedor
+FROM tb_locacao;
+
+--Criar tabela clientes_vendedores
+CREATE TABLE clientes_vendedores (
+    idCliente INT,
+    idVendedor INT,
+    PRIMARY KEY (idCliente, idVendedor),
+    FOREIGN KEY (idCliente) REFERENCES Cliente(idCliente),
+    FOREIGN KEY (idVendedor) REFERENCES Vendedor(idVendedor)
+);
+
+-- Inserir registros na tabela locacao
+INSERT INTO clientes_vendedores (idCliente, idVendedor)
+SELECT idCliente,idVendedor
+FROM tb_locacao;
+
+-- quantidade de duplicados
+SELECT idCliente, idVendedor, COUNT(*)
+FROM tb_locacao
+GROUP BY idCliente, idVendedor
+HAVING COUNT(*) > 1;
+
+-- inserir ids unicos
+INSERT INTO clientes_vendedores (idCliente, idVendedor)
+SELECT DISTINCT idCliente, idVendedor
+FROM tb_locacao;

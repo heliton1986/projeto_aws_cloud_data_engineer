@@ -1,0 +1,6 @@
+Testando atualizações.
+<<<<<<< HEAD
+testando 1,2,3
+=======
+a
+>>>>>>> funcao_x

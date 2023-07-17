@@ -1,0 +1,4 @@
+FROM python
+WORKDIR /garagem
+COPY carguru.py .
+CMD [ "python", "./carguru.py" ]
