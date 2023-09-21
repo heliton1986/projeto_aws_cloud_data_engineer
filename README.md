@@ -95,7 +95,9 @@ if __name__ == '__main__':
 
 ### Segunda Parte
 
-Agora, com os arquivos csv na camada Raw, criei um Lambda para extrair os dodos da API do TMDB também para a camada Raw no formato Json particionado por ano, mês, dia.
+![projeto parte 2](https://github.com/heliton1986/projeto_aws_cloud_data_engineer/assets/45739569/59d4954c-e582-48e7-9039-60aec387f0f9)
+
+Agora, com os arquivos csv na camada Raw, criei um Lambda para extrair os dados da API do TMDB também para a camada Raw no formato Json particionado por ano, mês, dia.
 
 - Criando role Lambda para obter permissões de acesso ao S3:
 
