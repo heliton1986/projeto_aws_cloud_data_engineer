@@ -2,11 +2,21 @@
 
 ## Apresentação
 
+Nesse projeto foi feito a ingestão de 2 arquivos csv series e movies para a camada RAW do S3, separando através dos diretórios Movies e Series e nestes, os subdiretórios de datas particionando por ano, mês e dia, através de um container Docker utilizando Python e sua biblioteca boto3.
+
+Em seguida, através da API do site do TMDB realizei a ingestão dos dados no formato json utilizando o AWS Lambda também para a camada RAW do S3, separando através do diretório TMDB e dentro deste, os subdiretórios de datas particionando por ano, mês e dia, fazendo com que tenha uma governança de dados eficiente para acesso a cada área específica.
+
+Com os arquivos csv e json na camada Raw, criei um job no Aws Glue com pyspark para limpar os dados, como remoção de registros duplicados, registros nulos, filtrando os filmes pelo gênero de terror e persistindo ambos os arquivos para o formato parquet para a camada Trusted, sendo o json particionado por ano/mês/dia.
+Criando catálogo de dados no Glue através de Query SQL pelo Aws Athena.
+
+Em sequência, criei outro job Glue para puxar as tabelas criadas no pelo Athena e criar views temporárias de dimensões e fato, join entre estas views, agregações e ordenações através do spark.sql, atribuindo à dataframes específicos e persistindo em formato parquet na camada Refined.
+
+Nessa camada criei novos catálogos de dados através do Athena e o diagrama dimensional para entrega para o time de negócio trabalhar com alguma ferramenta de self-service BI.
+
 ### Primeira Parte
 
 ![projeto parte 1](https://github.com/heliton1986/projeto_aws_cloud_data_engineer/assets/45739569/37c21771-49b3-43c4-a438-b3423c449a51)
 
-Nesse projeto foi feito a ingestão de 2 arquivos csv series e movies para a camada RAW do S3, separando através dos diretórios Movies e Series e nestes, os subdiretórios de datas particionando por ano, mês e dia, através de um container Docker utilizando Python e sua biblioteca boto3.
 
 - Confirmação de conexão da AWS com Boto3:
   
